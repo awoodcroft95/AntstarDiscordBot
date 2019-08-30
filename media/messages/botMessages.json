@@ -1,0 +1,10 @@
+[
+    {
+        "command": ["server","realm","faction"],
+        "message": "For WoW Classic we are playing on Gehennas as Horde. \nOn Retail we are playing on Ravencrest as Alliance"
+    },
+    {
+        "command": ["guild"],
+        "message": "Our Classic Guild is **Illuminati**, we are looking to do some casual raiding & dungeoning and hopefully experience all the classic content."
+    }
+]

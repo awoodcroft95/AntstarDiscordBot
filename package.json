@@ -1,0 +1,13 @@
+{
+    "name": "Anstar's WoW Discord Bot",
+    "version": "0.0.1",
+    "description": "Discord Bot",
+    "main": "bot.js",
+    "author": "Anthony Woodcroft",
+    "dependencies": {
+        "discord.io": "https://github.com/woor/discord.io/tarball/gateway_v6",
+        "discord.js": "^11.5.1",
+        "node-opus": "^0.3.2",
+        "winston": "^3.2.1"
+    }
+}
