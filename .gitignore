@@ -61,4 +61,4 @@ typings/
 .next
 
 #auth
-./auth.json
+auth.json
