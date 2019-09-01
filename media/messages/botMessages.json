@@ -6,5 +6,9 @@
     {
         "command": ["guild"],
         "message": "Our Classic Guild is **Illuminati**, we are looking to do some casual raiding & dungeoning and hopefully experience all the classic content."
+    },
+    {
+        "command": ["help"],
+        "message": "Use '!' followed by a word for text commands. \nUse '?' followed by a word for audio commands. \nTo show all available commands use either !commands for text or ?commands for audio."
     }
 ]

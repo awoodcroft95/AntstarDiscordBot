@@ -1,18 +1,18 @@
 [
     {
-        "SoundName": "LeeroyShort",
+        "SoundName": ["leeroy", "leeroyshort", "ls"],
         "SoundUrl": "https://dl.dropbox.com/s/9n85q0swm18n2wl/LeeroyJenkinsShort.mp3?dl=0"
     },
     {
-        "SoundName": "LeeroyLong",
+        "SoundName": ["leeroylong", "ll"],
         "SoundUrl": "https://dl.dropbox.com/s/f2lqet6sdljx1cd/LeeroyJenkinsLong.mp3?dl=0"
     },
     {
-        "SoundName": "50DKPWhoTheFuck",
+        "SoundName": ["50dkpwtf", "50dkpwhothefuck"],
         "SoundUrl": "https://dl.dropbox.com/s/p7bega9edhgyhts/50DKP_WhoTheFuck.mp3?dl=0"
     },
     {
-        "SoundName": "50DKPEvenSideManyWelps",
+        "SoundName": ["50dkpmwes", "50dkpmw", "50dkpmanywelps", "50dkpwhothefuckwasthat"],
         "SoundUrl": "https://dl.dropbox.com/s/jyy23hafqqiz6dq/50DKP_EvenSideManyWelps.mp3?dl=0"
     }
 ]
