@@ -1,5 +1,5 @@
 {
-    "name": "Anstar's WoW Discord Bot",
+    "name": "AnstarWoWDiscordBot",
     "version": "0.0.1",
     "description": "Discord Bot",
     "main": "bot.js",
