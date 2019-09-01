@@ -62,3 +62,6 @@ typings/
 
 #auth
 auth.json
+
+#run
+run.sh
