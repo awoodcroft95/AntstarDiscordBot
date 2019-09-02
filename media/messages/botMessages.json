@@ -10,5 +10,9 @@
     {
         "command": ["help"],
         "message": "Use '!' followed by a word for text commands. \nUse '?' followed by a word for audio commands. \nTo show all available commands use either !commands for text or ?commands for audio."
+    },
+    {
+        "command": ["rules"],
+        "message": "Rules: \n1. Don't be a dick! \n2. Don't Spam \n3. Don't invite people who aren't in the guild"
     }
 ]
