@@ -11,7 +11,13 @@ var isReady = true;
 // Configure logger settings
 const logger = winston.createLogger({
     level: 'info',
-    format: winston.format.json(),
+    format: winston.format.combine(
+        winston.format.json(),
+        winston.format.timestamp({
+            format: 'YYYY-MM-DD HH:mm:ss'
+        }),
+        winston.format.printf(info => `${info.timestamp} ${info.level}: ${info.message}`)
+    ),
     defaultMeta: { service: 'user-service' },
     transports: [
       //
@@ -26,11 +32,11 @@ const logger = winston.createLogger({
 
 // Initialize Discord Bot
 var bot = new Discord.Client();
-bot.login(auth.token);
+bot.login(auth.token).catch(logger.error);
 bot.on('ready', () => {
     logger.info('Connected');
     logger.info('Logged in as: ');
-    logger.info(bot.username + ' - (' + bot.id + ')');
+    logger.info(bot.user);
 });
 bot.on('message', message => {
     const commandPostpend = ", ";
@@ -100,6 +106,9 @@ bot.on('message', message => {
      }
 });
 
+bot.on('error', error => {
+    logger.error(error);
+})
 
 function playAudio(audioClipUrl, message){
     var voiceChannel = message.member.voiceChannel
