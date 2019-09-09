@@ -1,5 +1,5 @@
 var Discord = require('discord.js');
-var logger = require('winston');
+const winston = require('winston');
 var auth = require('./auth.json');
 var fs = require("fs");
 const contents = fs.readFileSync("./media/audio/audioData.json");
@@ -9,14 +9,24 @@ var audioFiles = JSON.parse(contents);
 var isReady = true;
 
 // Configure logger settings
-logger.remove(logger.transports.Console);
-logger.add(new logger.transports.Console, {
-    colorize: true
+const logger = winston.createLogger({
+    level: 'info',
+    format: winston.format.json(),
+    defaultMeta: { service: 'user-service' },
+    transports: [
+      //
+      // - Write to all logs with level `info` and below to `combined.log` 
+      // - Write all logs error (and below) to `error.log`.
+      //
+      new winston.transports.File({ filename: 'error.log', level: 'error' }),
+      new winston.transports.File({ filename: 'combined.log' }),
+      new winston.transports.Console({colorize: true})
+    ]
 });
-logger.level = 'debug';
 
 // Initialize Discord Bot
 var bot = new Discord.Client();
+bot.login(auth.token);
 bot.on('ready', () => {
     logger.info('Connected');
     logger.info('Logged in as: ');
@@ -90,7 +100,6 @@ bot.on('message', message => {
      }
 });
 
-bot.login(auth.token);
 
 function playAudio(audioClipUrl, message){
     var voiceChannel = message.member.voiceChannel
@@ -103,7 +112,9 @@ function playAudio(audioClipUrl, message){
             dispatcher.on("end", end =>{
                 voiceChannel.leave();
             });
-        }).catch(console.log);
+        }).catch(error => {
+            logger.error(error);
+        });
     } else {
         message.channel.send("Please join a voice channel to use audio commands. \nAudio commands start with a '?'")
     }
